@@ -155,6 +155,7 @@ frappe.query_reports["Customer GL Report"] = {
 
     "formatter": function (value, row, column, data, default_formatter) {
         value = default_formatter(value, row, column, data);
+        console.log(data.voucher_no)
 
         // Format debit columns (both currencies)
         if ((column.fieldname == "debit" || column.fieldname == "debit_in_account_currency") && data && flt(data[column.fieldname]) > 0) {
